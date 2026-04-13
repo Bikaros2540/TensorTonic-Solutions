@@ -1,0 +1,12 @@
+def percent_change(series):
+    """
+    Compute the fractional change between consecutive values.
+    """
+    n= len(series)
+    pct = [0]*(n-1)
+    for i in range(1,n):
+        if series[i-1]:
+            pct[i-1] = (series[i] - series[i-1])*1.0/series[i-1]
+        else:
+            pct[i-1] = 0.0
+    return pct
